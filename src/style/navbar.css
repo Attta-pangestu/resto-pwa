@@ -1,0 +1,22 @@
+.navbar{
+    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 10%;
+    margin: 1em 2em;
+    border-radius: 2rem;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+}
+
+ul.navbar__list {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul.navbar__list li{
+    list-style: none;
+}
+
+

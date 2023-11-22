@@ -15,7 +15,7 @@
 }
 
 .header__hero__wrapper{
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     padding-block: 2em;
 }
 
