@@ -1,0 +1,35 @@
+/* Header */
+
+.header{
+    min-height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(0deg, rgba(91, 0, 23, 0.70) 0%, rgba(91, 0, 23, 0.70) 100%),
+                linear-gradient(180deg, rgba(91, 32, 0, 0.00) 0%, #5B0017 93.23%), url('../public/images/hero_image.png'), lightgray 0px 1.131px / 100% 97.061% no-repeat;
+    background-blend-mode: overlay, normal, normal;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.header__hero__wrapper{
+    backdrop-filter: blur(5px);
+    padding-block: 2em;
+}
+
+h1.header__hero__heading{
+    font-size: 4em;
+    font-weight: 400;
+    color: var(--secondary-color);
+    
+}
+
+p.header__hero__paragraf{
+    font-size: 1em;
+    margin: 1em 0 2em 0 ;
+}
+
+
+

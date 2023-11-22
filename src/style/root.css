@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Global Variabel Style */
+:root{
+    --primary-color: #5B0017;
+    --secondary-color: #CC9D2F;
+    --font-color: #FFFFFF;
+    --btn : #CC9D2F;
+    --btn-hover : #dcae41;
+    --image-color: linear-gradient(
+        0deg,
+        rgba(91, 0, 23, 0.70) 3%, 
+        rgb(0 0 0 / 40%) 100%
+        
+    ) ;
+}
+
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--font-color);
+}
+
+
+.button {
+    position: relative;
+    color: var(--primary-color);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: larger;
+    padding: 0.5em 1em;
+    border: 1px solid transparent;
+    background-color: var(--btn);
+    vertical-align: middle;
+    text-align: center;
+    transition: background-color 300ms ease-in-out ;
+
+    /* offset outline */
+    margin: -0.5em 0 -0.2em -3em;
+}
+
+.button::after{
+    border: 2px solid var(--secondary-color);
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -6px;
+    width: 100%;
+    height: 100%;
+    padding: 0.5em 1em;
+    transform: (8px,8px);
+    transition: transform .3s ease-in-out;
+    z-index: -1;
+}
+
+.button-container {
+    position: relative;
+    padding: 2em 2em;
+}
+
+
+.button:hover::after{
+    left: -5px;
+    top: -2px;
+}
