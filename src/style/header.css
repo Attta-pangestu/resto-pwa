@@ -17,6 +17,7 @@
 .header__hero__wrapper{
     backdrop-filter: blur(2px);
     padding-block: 2em;
+    margin-top: 6em;
 }
 
 h1.header__hero__heading{

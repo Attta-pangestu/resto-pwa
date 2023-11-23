@@ -1,22 +1,46 @@
 .navbar{
-    display: inline-block;
+    position: relative;
+}
+
+.navbar > nav{
+    position: sticky;
     display: flex;
     justify-content: space-between;
+    height: 150px;
     align-items: center;
     padding: 2% 10%;
     margin: 1em 2em;
     border-radius: 2rem;
-    overflow: hidden;
     backdrop-filter: blur(4px);
 }
 
 ul.navbar__list {
     display: flex;
     justify-content: space-around;
+    
 }
+
 
 ul.navbar__list li{
     list-style: none;
 }
+
+/* List Item */
+li.list-item {
+    margin-inline: 10px;
+    font-size: 1.5em;
+}
+
+/* MENU ICON */
+
+.navbar__menu.button {
+    border-radius: 10%;
+    font-size: 1.5em;
+}
+
+.navbar__menu.button::after{
+    display: none;
+}
+
 
 

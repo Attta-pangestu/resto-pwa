@@ -1,0 +1,46 @@
+/* for device width <= 530px*/
+@media only screen and (max-width:530px) {
+    ul.navbar__list{
+        position: absolute;
+        background-color: var(--secondary-color);
+        color: white;
+        width: 100%;
+        padding-block: 6% ;
+        text-align: center;
+        transform: translate(-540px,10px);
+        z-index: 999;
+        border-radius: 1em;
+        bottom: -90px;
+        left: -300px;
+    }
+
+    ul.navbar__list.open{
+        bottom: -90px;
+        left: 0;
+        transform: translate(-40px,10px);
+        transition: transform .5s ease-in;
+    }
+
+    button.navbar__menu.button{
+        display: block;
+    }
+
+    .navbar > nav{
+        padding: 10px 5% ;
+    }
+    
+    .navbar__brand > img {
+        display: block ;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+@media only screen and (max-width:1280px){
+
+
+    .navbar__menu{
+        display: none;
+    }
+}

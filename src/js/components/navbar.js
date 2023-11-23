@@ -5,13 +5,21 @@ class Navbar extends HTMLElement {
   }
 
   _render() {
+    const navElement = addElem("nav", this, []);
     const imgContent = `<img src="./images/logo.svg"/>`;
-    addElem("div", this, ["navbar__brand"], imgContent);
+    addElem("div", navElement, ["navbar__brand"], imgContent);
+    // Adding Icon Hamburger Menu
+    const menuContainer = addElem("button", navElement, [
+      "navbar__menu",
+      "button",
+    ]);
+    addElem("span", menuContainer, ["fa", "fa-bars"]);
     // Adding list
-    const listMenu = addElem("ul", this, ["navbar__list"]);
+    const listMenu = addElem("ul", navElement, ["navbar__list"]);
     // adding menu item
     addElem("li", listMenu, ["list-item"], "<a>Home</a>");
     addElem("li", listMenu, ["list-item"], "<a>Favorites</a>");
+    addElem("li", listMenu, ["list-item"], "<a>about</a>");
   }
 }
 

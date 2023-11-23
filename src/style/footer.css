@@ -1,0 +1,17 @@
+custom-footer{
+    padding: 5% 10%;
+    display: block;
+    position: static;
+    width: 100%;
+    background: #CC9D2F;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    font-weight: normal;
+    border-top: 3px groove var(--primary-color)
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    ;
+}

@@ -1,4 +1,4 @@
-export const addElem = (element, parent, classes, content = null) => {
+export const addElem = (element, parent = null, classes, content = null) => {
   const child = document.createElement(element);
   if (typeof classes !== "undefined") {
     classes.forEach((cl) => {
@@ -8,6 +8,8 @@ export const addElem = (element, parent, classes, content = null) => {
   if (content !== null) {
     child.innerHTML = content;
   }
-  parent.appendChild(child);
+  if (parent !== null) {
+    parent.appendChild(child);
+  }
   return child;
 };
