@@ -23,7 +23,7 @@ class App {
     const mainContainer = document.querySelector("#main-content");
     const url = UrlParser.hashUrl();
     const PageScript = Routes[url];
-    const appShell = PageScript.initialAppShell();
+    const appShell = PageScript.initialShell();
     mainContainer.innerHTML = appShell.outerHTML;
 
     // Including data

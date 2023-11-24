@@ -1,4 +1,6 @@
 import { addElem } from "../../utilities/addElem";
+import RestaurantData from "../../data/restaurant-data";
+
 class Explore {
   initialShell() {
     console.log("menjalankan initial app shell");
@@ -10,7 +12,10 @@ class Explore {
     return mainContainer;
   }
 
-  afterRenderShell() {}
+  async afterRenderShell() {
+    const RestoListAll = await RestaurantData.getListAll();
+    console.log(RestoListAll);
+  }
 }
 
 export default Explore;
