@@ -1,7 +1,7 @@
 import Explore from "../views/pages/explore";
 
 const Routes = {
-  "/": Explore,
+  "/": new Explore(),
   //   "/fav": Favorite,
 };
 
