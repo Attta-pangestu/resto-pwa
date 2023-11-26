@@ -18,7 +18,7 @@ class App {
     });
   }
 
-  renderPage() {
+  async renderPage() {
     console.log("Merender Explore ");
     const mainContainer = document.querySelector("#main-content");
     const url = UrlParser.hashUrl();
@@ -27,7 +27,7 @@ class App {
     mainContainer.innerHTML = appShell.outerHTML;
 
     // Including data
-    PageScript.afterRenderShell();
+    await PageScript.afterRenderShell();
   }
 }
 

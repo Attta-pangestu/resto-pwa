@@ -3,6 +3,11 @@
 @import 'navbar.css';
 @import 'responsive.css';
 @import 'footer.css';
+@import 'card-resto.css';
 /*
 MAIN
 */
+h1.container__title{
+    text-align: center;
+}
+
