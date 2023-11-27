@@ -8,6 +8,15 @@ const initSuccessSWAL = () => {
     });
 }
 
+const initErrorSWAL =  (message) => {
+    Swal.fire({
+        title: "Error happened",
+        text: `${message}`,
+        icon: "error",
+    });
+}
+
 export {
-    initSuccessSWAL
+    initSuccessSWAL, 
+    initErrorSWAL,
 };
