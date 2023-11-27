@@ -2,11 +2,17 @@ import { addElem } from "../../utilities/addElem";
 import RestaurantData from "../../data/restaurant-data";
 import renderRestoCard from "../template/resto-card";
 import Spinner from "../template/spinner";
+import { initErrorSWAL, initSuccessSWAL } from "../../utilities/sweet-alert-iniator";
 
 class Explore {
+  constructor({ mainSection }) {
+    this._mainSection = mainSection;
+  }
+
+
   initialShell() {
     console.log("menjalankan initial app shell");
-    const mainContainer = addElem("div", null, ["container"]);
+    const mainContainer = addElem("div", this._mainSection, ["container"]);
     addElem("div", mainContainer, ["container__loading"]);
     addElem(
       "h1",
@@ -16,7 +22,6 @@ class Explore {
     );
     addElem("section", mainContainer, ["container__explore"]);
     console.log(mainContainer);
-    return mainContainer;
   }
 
   async afterRenderShell() {
@@ -32,9 +37,20 @@ class Explore {
       listContainer.innerHTML +=
         renderRestoCard(resto);
     });
+
+    // change loader to list resto
+    loadingElement.style.display = 'none';
+    listContainer.style.display = 'grid';
     
+
     }catch(err) {
       console.log('Error mengambil data list restaurant ', err);
+
+      // UI if failed to retrive data
+      loadingElement.style.display = 'flex';
+      listContainer.innerHTML = `ERROR ${err.message}` ; 
+      initErrorSWAL(err.message);
+
     }
 
     
@@ -42,3 +58,4 @@ class Explore {
 }
 
 export default Explore;
+

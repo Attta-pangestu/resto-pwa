@@ -7,12 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --config webpack.dev.js"
   },
+  "proxy" : "", 
   "keywords": [],
-  "author": "",
+  "author": "http://operamini.com",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.2",
-    "regenerator-runtime": "^0.14.0"
+    "regenerator-runtime": "^0.14.0",
+    "sweetalert2": "^11.10.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",

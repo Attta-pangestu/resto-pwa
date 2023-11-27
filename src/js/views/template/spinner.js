@@ -1,5 +1,4 @@
-const Spinner = () => {
-  '<div class="loader"></div>';
-};
+const Spinner = () => '<div class="lds-hourglass "></div>';
+;
 
 export default Spinner;
