@@ -19,8 +19,7 @@ class App {
   }
 
   async renderPage() {
-    console.log("Merender Explore ");
-    const url = UrlParser.hashUrl();
+    const url = UrlParser.parseURLForRoutes();
     const PageScript = new Routes[url]({
       mainSection : document.querySelector("#main-content"),
     });

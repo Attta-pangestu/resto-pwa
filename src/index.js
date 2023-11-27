@@ -19,7 +19,7 @@ const app = new App({
 
 window.addEventListener("DOMContentLoaded", () => {
   app.renderPage();
-  console.log("render 6");
+  console.log("render 9");
 });
 
 window.addEventListener("hashchange", () => {

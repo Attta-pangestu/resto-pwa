@@ -9,6 +9,7 @@ const RestaurantData = {
 
   async getDetailResto(id) {
     const result = await axios.get(APIEndpoint.GET_DETAIL(id));
+    console.log(result, APIEndpoint.GET_DETAIL(id));
     return result.data.restaurants;
   }
 };

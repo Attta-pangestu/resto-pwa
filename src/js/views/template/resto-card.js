@@ -3,7 +3,7 @@ import Config from "../../global/config";
 const renderRestoCard = (restoData) => {
   return `
         <div class="card">
-            <a href="#/detail/${restoData.id}" class="card__link">
+            <a href="#/detail/id/${restoData.id}" class="card__link">
                 <div class="card__img">
                     <img 
                     src="${Config.BASE_URL_IMAGE + restoData.pictureId}"

@@ -1,20 +1,25 @@
 const UrlParser = {
-  hashUrl() {
+  
+  parseURLForRoutes() {
     const url = window.location.hash;
-    console.log("INI URL NYA ", url);
+    console.log(url);
     if (url) {
       const hashVal = url.slice(2).toLowerCase();
       const splitURL = this._urlSplitter(hashVal);
-      return this._urlCombiner(splitURL);
+      const urlCombiner = this._urlCombiner(splitURL);
+      console.log("Ini nilai urlCombiner karna ada url, ", urlCombiner);
+      return urlCombiner
+    } else {
+      const splitURL = this._urlSplitter(url);
+      const urlCombiner = this._urlCombiner(splitURL);
+      console.log("Ini nilai urlCombiner, ", urlCombiner);
+      return urlCombiner;
     }
-    const splitURL = this._urlSplitter(url);
-    const urlCombiner = this._urlCombiner(splitURL);
-    console.log("Ini nilai urlCombiner, ", urlCombiner);
-    return urlCombiner;
   },
 
   _urlSplitter(hashUrl) {
     const urlParam = hashUrl.split("/");
+    console.log('URL HASIL SPLITTER : ', urlParam);
     return {
       page: urlParam[0] || null,
       verb: urlParam[1] || null,
@@ -25,8 +30,7 @@ const UrlParser = {
   _urlCombiner({ page, verb, id }) {
     return (
       (page ? page : "/") +
-      (verb ? "/" + verb : "") +
-      (id ? "/" + `id=${id}` : "")
+      (verb ? "/" + verb : "") 
     );
   },
 };
