@@ -8,9 +8,12 @@ const RestaurantData = {
   },
 
   async getDetailResto(id) {
-    const result = await axios.get(APIEndpoint.GET_DETAIL(id));
-    console.log(result, APIEndpoint.GET_DETAIL(id));
-    return result.data.restaurants;
+    try{
+      const result = await axios.get(APIEndpoint.GET_DETAIL(id));
+      return result.data.restaurant;
+    }catch(err){
+      console.log('gagal mengakses detail resto : ', err)
+    }
   }
 };
 

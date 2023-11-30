@@ -17,7 +17,7 @@ const app = new App({
   listMenu: document.querySelector("#navbar__list"),
 });
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   app.renderPage();
   console.log("render 9");
 });

@@ -6,6 +6,7 @@ import Spinner from "../template/spinner";
 class DetailResto {
     constructor({mainSection}) {
         this._mainSection = mainSection;
+        this._mainSection.innerHTML = '';
     }
 
     initialShell() {
@@ -17,16 +18,15 @@ class DetailResto {
     }
 
     async afterRenderShell() {
-        const loadingElement = document.querySelector('.container__loading');
-        const mainContainer = document.querySelector('.container');
-        const detilContainer = document.querySelector('.container__detail');
-        
-        detilContainer.style.display = 'none';
-        loadingElement.innerHTML = Spinner();
-
-        const getId = UrlParser._urlSplitter.id;
-        console.log('Id Resto : ', getId);
         try{
+            const loadingElement = document.querySelector('.container__loading');
+            const mainContainer = document.querySelector('.container');
+            const detilContainer = document.querySelector('.container__detail');
+            
+            detilContainer.style.display = 'none';
+            // loadingElement.innerHTML = 'Halo world';
+            const getId = UrlParser.parseURLParam()['id'];
+            console.log('Id Resto :',getId);
             const dataResto = await RestaurantData.getDetailResto(getId);
             console.log(dataResto);
         }

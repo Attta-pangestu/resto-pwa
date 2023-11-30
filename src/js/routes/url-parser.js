@@ -1,20 +1,20 @@
 const UrlParser = {
   
   parseURLForRoutes() {
-    const url = window.location.hash;
-    console.log(url);
-    if (url) {
-      const hashVal = url.slice(2).toLowerCase();
-      const splitURL = this._urlSplitter(hashVal);
-      const urlCombiner = this._urlCombiner(splitURL);
-      console.log("Ini nilai urlCombiner karna ada url, ", urlCombiner);
-      return urlCombiner
-    } else {
-      const splitURL = this._urlSplitter(url);
-      const urlCombiner = this._urlCombiner(splitURL);
-      console.log("Ini nilai urlCombiner, ", urlCombiner);
-      return urlCombiner;
-    }
+    const url = window.location.hash || '/';
+    const sliceUrl = url.slice(2).toLowerCase();
+    const splitURL = this._urlSplitter(sliceUrl);
+    console.log( 'ini split url',splitURL);
+    const urlCombiner = this._urlCombiner(splitURL);
+    console.log("Ini nilai urlCombiner , ", urlCombiner);
+    return urlCombiner;
+  },
+
+  parseURLParam() {
+    const url = window.location.hash || '/';
+    const sliceUrl = url.slice(2).toLowerCase();
+    const splitURL = this._urlSplitter(sliceUrl);
+    return splitURL;
   },
 
   _urlSplitter(hashUrl) {
