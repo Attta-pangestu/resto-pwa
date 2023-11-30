@@ -10,7 +10,7 @@ class Hero extends HTMLElement {
       "h1",
       heroWrapper,
       ["header__hero__heading"],
-      "Find Best Restorant"
+      "Find Best Restaurant"
     );
     addElem(
       "p",
