@@ -7,6 +7,8 @@ import "./style/main.css";
 import "./js/components/hero";
 import "./js/components/navbar";
 import "./js/components/custom-footer";
+// Template
+import "./js/views/template/components/detail-resto-component";
 
 import App from "./js/views/App";
 
