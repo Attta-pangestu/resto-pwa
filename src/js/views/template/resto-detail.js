@@ -1,13 +1,16 @@
-const renderRestoDetail =  (resto) => {
-    console.log(resto)
-    return `
-    <render-detail-component
-    .restoData=${{key: "i am here"}}
-    testHelo= "Halo ini render "
-    .restoobject=${resto}
-    ></render-detail-component>
+const renderRestoDetail =  async (resto) => {
+    const detailElement =  await document.createElement('render-detail-component');
     
-    `;
+    detailElement.restoData = await JSON.stringify(resto) ;
+    return detailElement.outerHTML;
+}
+
+const renderDetailComponent = (resto) => {
+    const detailElement =  document.createElement('render-detail-component');
+
+    // set detail property
+    detailElement.restoData = JSON.stringify(resto) ;
+    return detailElement;
 }
 
 

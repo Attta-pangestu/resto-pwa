@@ -1,63 +1,50 @@
-import { LitElement, html } from "lit";
+
 import Config from "../../../global/config";
-class DetailRestoComponent extends LitElement  {
-    
-    static get properties() {
-        return {
-            restoData : {type:Object, reflect: true}, 
-            testHelo : {type: String},
-            restoObject : {type:Object},
-            restoArray : {type:Array},
-        }
+
+class DetailRestoComponent extends HTMLElement  {
+    connectedCallback() {
+        this.render();
     }
     
-
-    constructor() {
-        super();
-        this.restoData = {};
-        this.testHelo = '';
-        this.restoObject = {};
-        this.restoArray = [{}];
-        console.log('DetailRestoComponent constructor called');
+    set restoData(data) {
+        this._restoData = JSON.parse(data);
+        this.render();
     }
 
-    updated(changedProperties) {
-        console.log('DetailRestoComponent updated:', changedProperties);
-        console.log('Updated restoData:', this.restoData);
+    get restoData() {
+        return this._restoData;
     }
 
     render(){
-        // const parseRestoData = JSON.parse(this.restoData);
-        console.log(this.testHelo);
-        console.log(this.restoData);
-        console.log(this.restoObject);
-        // console.log(parseRestoData);
-        return html `
+       
+        console.log(this._restoData);
+
+        this.innerHTML =  `
             <div class="detail">
             <div class="detail__image">
-                <img src="${Config.BASE_URL_IMAGE + this.restoData.pictureId}" alt="Resto Image"/>
+                <img src="${Config.BASE_URL_IMAGE + this._restoData.pictureId}" alt="Resto Image"/>
             </div>
             
             <div class="detail__info">
                 <ul class="info__points">
                     <li>
                         <i title="restaurant" class="fas fa-store-alt icon-primary"></i>
-                        <p class="info__point">${this.restoData.name}</p>
+                        <p class="info__point">${this._restoData.name}</p>
                     </li>
                     <li>
                     <i title="address" class="fas fa-map-marker-alt icon-primary"></i>
-                        <p class="info__point">${this.restoData.address}, ${this.restoData.city}</p>
+                        <p class="info__point">${this._restoData.address}, ${this._restoData.city}</p>
                     </li>
                     <i title="ratings" class="fas fa-star icon-primary"></i>
-                        <p class="info__point">${this.restoData.rating}</p>
+                        <p class="info__point">${this._restoData.rating}</p>
                     </li>
 
                     <li>
-                        <p class="info__description">${this.restoData.description}</p>
+                        <p class="info__description">${this._restoData.description}</p>
                     </li>
 
                     <li>
-                        ${this.restoData.categories.map(
+                        ${this._restoData.categories.map(
                             (category) => `
                                 <span class="category">${category.name}</span>
                             `
