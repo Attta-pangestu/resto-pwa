@@ -8,10 +8,10 @@ class renderMenuDetailComponent extends HTMLElement {
     render(){
         console.log(this._restoData);
         this.innerHTML = `
-            <h3>List Menu On This Restaurant</h3>
-            <div classs="menu">
+            <h2>List Menu On This Restaurant</h2>
+            <div class="menu">
                 <h4>Food</h4>
-                <ul>
+                <ul class="list-menu">
                 ${this._restoData.menus.foods.map(
                     (food,i) => `<li><p>${i + 1}) ${food.name}</p></li>`
                     

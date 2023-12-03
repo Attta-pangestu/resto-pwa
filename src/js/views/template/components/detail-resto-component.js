@@ -16,6 +16,7 @@ class DetailRestoComponent extends HTMLElement  {
 
         this.innerHTML =  `
             <div class="detail">
+            <h2>${this._restoData.name}</h3>
             <div class="detail__image">
                 <img src="${Config.BASE_URL_IMAGE + this._restoData.pictureId}" alt="Resto Image"/>
             </div>
@@ -27,10 +28,11 @@ class DetailRestoComponent extends HTMLElement  {
                         <p class="info__point">${this._restoData.name}</p>
                     </li>
                     <li>
-                    <i title="address" class="fas fa-map-marker-alt icon-primary"></i>
+                        <i title="address" class="fas fa-map-marker-alt icon-primary"></i>
                         <p class="info__point">${this._restoData.address}, ${this._restoData.city}</p>
                     </li>
-                    <i title="ratings" class="fas fa-star icon-primary"></i>
+                    <li>
+                        <i title="ratings" class="fas fa-star icon-primary"></i>
                         <p class="info__point">${this._restoData.rating}</p>
                     </li>
 
