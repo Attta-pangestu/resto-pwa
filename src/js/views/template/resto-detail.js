@@ -1,9 +1,10 @@
 const renderRestoDetail =  (resto) => {
+    console.log(resto)
     return `
     <render-detail-component
-    .restoData=${JSON.stringify(resto)}
-    testHelo= "Halo"
-    .restoObject=${resto}
+    .restoData=${{key: "i am here"}}
+    testHelo= "Halo ini render "
+    .restoobject=${resto}
     ></render-detail-component>
     
     `;

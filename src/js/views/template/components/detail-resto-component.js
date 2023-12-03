@@ -1,22 +1,21 @@
+import { LitElement, html } from "lit";
+import Config from "../../../global/config";
 class DetailRestoComponent extends LitElement  {
     
     static get properties() {
         return {
-            restoData : {type:Object}, 
+            restoData : {type:Object, reflect: true}, 
             testHelo : {type: String},
             restoObject : {type:Object},
             restoArray : {type:Array},
         }
     }
     
-    set MyAttributes(restoData) {
-        this.restoObject = restoData;
-    }
 
     constructor() {
         super();
-        this.restoData = '';
-        this.testHelo = {};
+        this.restoData = {};
+        this.testHelo = '';
         this.restoObject = {};
         this.restoArray = [{}];
         console.log('DetailRestoComponent constructor called');
@@ -24,6 +23,7 @@ class DetailRestoComponent extends LitElement  {
 
     updated(changedProperties) {
         console.log('DetailRestoComponent updated:', changedProperties);
+        console.log('Updated restoData:', this.restoData);
     }
 
     render(){
