@@ -1,14 +1,37 @@
-import { html, LitElement, property } from "lit";
-
-import Config from "../../../global/config";
-
-
 class DetailRestoComponent extends LitElement  {
-    @property({type: Object}) restoData={}
     
+    static get properties() {
+        return {
+            restoData : {type:Object}, 
+            testHelo : {type: String},
+            restoObject : {type:Object},
+            restoArray : {type:Array},
+        }
+    }
+    
+    set MyAttributes(restoData) {
+        this.restoObject = restoData;
+    }
+
+    constructor() {
+        super();
+        this.restoData = '';
+        this.testHelo = {};
+        this.restoObject = {};
+        this.restoArray = [{}];
+        console.log('DetailRestoComponent constructor called');
+    }
+
+    updated(changedProperties) {
+        console.log('DetailRestoComponent updated:', changedProperties);
+    }
 
     render(){
+        // const parseRestoData = JSON.parse(this.restoData);
+        console.log(this.testHelo);
         console.log(this.restoData);
+        console.log(this.restoObject);
+        // console.log(parseRestoData);
         return html `
             <div class="detail">
             <div class="detail__image">
@@ -23,7 +46,7 @@ class DetailRestoComponent extends LitElement  {
                     </li>
                     <li>
                     <i title="address" class="fas fa-map-marker-alt icon-primary"></i>
-                        <p class="info__point">${this.restoData.address}, ${resto.city}</p>
+                        <p class="info__point">${this.restoData.address}, ${this.restoData.city}</p>
                     </li>
                     <i title="ratings" class="fas fa-star icon-primary"></i>
                         <p class="info__point">${this.restoData.rating}</p>
@@ -49,3 +72,4 @@ class DetailRestoComponent extends LitElement  {
 }
 
 customElements.define('render-detail-component', DetailRestoComponent);
+export default DetailRestoComponent;
