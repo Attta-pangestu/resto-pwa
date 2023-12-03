@@ -1,16 +1,24 @@
-const renderRestoDetail =  async (resto) => {
-    const detailElement =  await document.createElement('render-detail-component');
+const renderRestoDetail =  (resto) => {
+    const stringedResto = JSON.stringify(resto);
+    return (
+        renderDetailComponent(stringedResto) +
+        renderMenuDetailComponent(stringedResto)
+    ); 
     
-    detailElement.restoData = await JSON.stringify(resto) ;
-    return detailElement.outerHTML;
+}
+
+const renderMenuDetailComponent = (resto) =>  {
+    const menuComponent = document.createElement('render-menu-detail');
+    menuComponent.restoData = resto ;
+    return menuComponent.outerHTML;
+    
 }
 
 const renderDetailComponent = (resto) => {
     const detailElement =  document.createElement('render-detail-component');
-
     // set detail property
-    detailElement.restoData = JSON.stringify(resto) ;
-    return detailElement;
+    detailElement.restoData = resto ;
+    return detailElement.outerHTML;
 }
 
 

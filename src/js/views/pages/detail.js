@@ -29,7 +29,7 @@ class DetailResto {
             console.log('Id Resto :',getId);
             const dataResto = await RestaurantData.getDetailResto(getId);
             console.log(dataResto);
-            mainContainer.innerHTML = await renderRestoDetail(dataResto);
+            mainContainer.innerHTML = renderRestoDetail(dataResto);
         }
         catch(err) {
             console.log('error fetch data detail resto ', err);

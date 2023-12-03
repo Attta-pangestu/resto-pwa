@@ -2,9 +2,6 @@
 import Config from "../../../global/config";
 
 class DetailRestoComponent extends HTMLElement  {
-    connectedCallback() {
-        this.render();
-    }
     
     set restoData(data) {
         this._restoData = JSON.parse(data);
@@ -16,8 +13,6 @@ class DetailRestoComponent extends HTMLElement  {
     }
 
     render(){
-       
-        console.log(this._restoData);
 
         this.innerHTML =  `
             <div class="detail">

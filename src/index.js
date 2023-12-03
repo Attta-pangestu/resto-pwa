@@ -9,6 +9,7 @@ import "./js/components/navbar";
 import "./js/components/custom-footer";
 // Template
 import "./js/views/template/components/detail-resto-component";
+import "./js/views/template/components/menu-resto-component";
 
 import App from "./js/views/App";
 
