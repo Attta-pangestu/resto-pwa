@@ -7,6 +7,7 @@ import { initErrorSWAL, initSuccessSWAL } from "../../utilities/sweet-alert-inia
 class Explore {
   constructor({ mainSection }) {
     this._mainSection = mainSection;
+    this._mainSection.innerHTML = '';
   }
 
 
