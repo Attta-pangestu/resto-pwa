@@ -3,9 +3,11 @@ section.container__explore{
     display: grid;
     gap: 1.5em;
     padding-top: 1.5em;
+    
 }
 
 .card{
+    position: relative;
     width: 100%;
     text-align: center;
     cursor: pointer;
@@ -27,7 +29,6 @@ section.container__explore{
 }
 
 .card__img {
-    position: relative;
     max-height: 600px;
     width: 100%;
     overflow: hidden;

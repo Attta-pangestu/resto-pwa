@@ -29,7 +29,7 @@ class Explore {
     const loadingElement = document.querySelector('.container__loading');
     const mainContainer = document.querySelector('.container');
     const listContainer = document.querySelector(".container__explore");
-
+    document.querySelector('#like-container').innerHTML = '';
     listContainer.style.display = 'none';
     loadingElement.innerHTML = Spinner();
     try{

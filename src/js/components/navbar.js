@@ -17,8 +17,8 @@ class Navbar extends HTMLElement {
     // Adding list
     const listMenu = addElem("ul", navElement, ["navbar__list"]);
     // adding menu item
-    addElem("li", listMenu, ["list-item"], "<a>Home</a>");
-    addElem("li", listMenu, ["list-item"], "<a>Favorites</a>");
+    addElem("li", listMenu, ["list-item"], "<a href=\"#\">Home</a>");
+    addElem("li", listMenu, ["list-item"], "<a href=\"#/favorite\">Favorites</a>");
     addElem("li", listMenu, ["list-item"], "<a>about</a>");
   }
 }

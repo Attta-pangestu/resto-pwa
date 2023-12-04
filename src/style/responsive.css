@@ -1,5 +1,5 @@
 /* for device width <= 530px*/
-@media only screen and (max-width:530px) {
+@media only screen and (max-width:670px) {
     ul.navbar__list{
         position: absolute;
         background-color: var(--secondary-color);
@@ -13,6 +13,7 @@
         bottom: -90px;
         left: -300px;
     }
+
 
     ul.navbar__list.open{
         bottom: -90px;
@@ -36,12 +37,12 @@
     }
 
     section.container__explore{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
 }
 
-@media only screen and (max-width:1280px){
+@media only screen and (max-width:1280px) and (min-width:670px){
     section.container__explore{
         grid-template-columns: 1fr 1fr 1fr;
     }

@@ -6,7 +6,8 @@ const {DB_NAME, DB_VERSION, OBJECT_STORE_NAME} = Config ;
 const openIdbObj = openDB(DB_NAME, DB_VERSION, {
     upgrade(db) {
         db.createObjectStore(OBJECT_STORE_NAME,{
-            keypath: 'id', 
+            keyPath: 'id', 
+            autoIncrement: true,
         })
     }
 });
@@ -21,13 +22,11 @@ const FavRestoIdb = {
         if(!restoObj.hasOwnProperty('id')){
             return;
         }
-        (await openIdbObj).put(OBJECT_STORE_NAME, restoObj);
+        // check if there the id s
+        (await openIdbObj).put(OBJECT_STORE_NAME, restoObj, restoObj.id);
     }, 
 
     async deleteResto(id){
-        if(!restoObj.hasOwnProperty('id')){
-            return;
-        }
         (await openIdbObj).delete(OBJECT_STORE_NAME, id);
     }
 }

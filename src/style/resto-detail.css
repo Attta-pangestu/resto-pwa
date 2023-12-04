@@ -70,7 +70,7 @@ ul.info__points > li > span.category{
 
 
 /* MENU COMPONENT */
-h2 {
+render-menu-detail h2 {
     text-align: center;
     margin-top: 2em;
 }

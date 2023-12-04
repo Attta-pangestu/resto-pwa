@@ -23,6 +23,17 @@ ul.navbar__list {
 
 ul.navbar__list li{
     list-style: none;
+    cursor: pointer;
+}
+
+ul.navbar__list li a{
+    color: white;
+}
+
+ul.navbar__list li:hover a{
+    color: var(--secondary-color);
+    border: 2px solid white;
+    border-width: 2px 0px;
 }
 
 /* List Item */
