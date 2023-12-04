@@ -72,6 +72,7 @@ ul.info__points > li > span.category{
 /* MENU COMPONENT */
 h2 {
     text-align: center;
+    margin-top: 2em;
 }
 
 .menu h4{
@@ -94,11 +95,36 @@ ul.list-menu {
     border-width: 0 0 1px 0;
 }
 
-.list-menu li p {
+.list-menu li.list-item p {
     text-align: center;
-    font-weight: bold;
+    font-size: .8em;
+}
+
+.list-menu li.list-item:hover{
+    box-shadow: 0 10px 13px -7px var(--secondary-color), 
+        5px 5px 15px 5px var(--secondary-color)
+    ;
+}
+
+/* CUSTOMER REVIEW */
+
+ul.list-review{
+    padding:  .4em !important; 
+}
+
+li > .review-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+li > .review-header h3 {
     font-size: 1em;
 }
+
+.review-body {
+    font-size: .8em;
+}
+
 
 
 

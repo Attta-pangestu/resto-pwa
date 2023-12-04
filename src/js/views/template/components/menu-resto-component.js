@@ -13,23 +13,23 @@ class renderMenuDetailComponent extends HTMLElement {
                 <h4>Food</h4>
                 <ul class="list-menu">
                 ${this._restoData.menus.foods.map(
-                    (food,i) => `<li><p>${i + 1}) ${food.name}</p></li>`
+                    (food,i) => `<li class="list-item"><p>${i + 1}) ${food.name}</p></li>`
                     
                 ).join('')}
                 </ul>
                 <h4>Drink</h4>
-                <ul>
+                <ul  class="list-menu">
                 ${this._restoData.menus.drinks.map(
-                    (food,i) => `<li><p>${i + 1}) ${food.name}</p></li>`
+                    (food,i) => `<li class="list-item"><p>${i + 1}) ${food.name}</p></li>`
                     
                 ).join('')}
                 </ul>
                 <h4>Customer Reviews</h4>
-                <ul>
+                <ul class="list-menu list-review">
                     ${this._restoData.customerReviews.map(
                         (review) => {
                             return `
-                                <li>
+                                <li class="list-item ">
                                     <div class="review-header">
                                         <h3>${review.name}</h3>
                                         <p>${review.date}</p>

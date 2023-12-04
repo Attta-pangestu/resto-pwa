@@ -18,3 +18,26 @@ h1.container__title{
     
 }
 
+.container{
+    margin: 2em 5%;
+    padding: 1em;
+    position: relative;
+}
+
+#likeButton{
+    position: fixed;
+    bottom: 10%; right: 10%;
+    width: 60px; height: 60px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+
+}
+
+#likeButton > i {
+    font-size: 3em;
+}
+
+

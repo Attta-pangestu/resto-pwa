@@ -3,6 +3,8 @@ import { addElem } from "../../utilities/addElem";
 import UrlParser from "../../routes/url-parser";
 import Spinner from "../template/spinner";
 import renderRestoDetail from "../template/resto-detail";
+import LikeButtonPresenter from "../../utilities/like-button-presenter";
+
 class DetailResto {
     constructor({mainSection}) {
         this._mainSection = mainSection;
@@ -18,18 +20,27 @@ class DetailResto {
     }
 
     async afterRenderShell() {
+        const loadingElement = document.querySelector('.container__loading');
+        const detilContainer = document.querySelector('.container__detail');
+        const likeContainer = document.querySelector('#like-container');
+        detilContainer.style.display = 'none';
+        loadingElement.innerHTML = Spinner();
+        const getId = UrlParser.parseURLParam()['id'];
+
         try{
-            const loadingElement = document.querySelector('.container__loading');
-            const mainContainer = document.querySelector('.container');
-            const detilContainer = document.querySelector('.container__detail');
-            
-            detilContainer.style.display = 'none';
-            loadingElement.innerHTML = Spinner();
-            const getId = UrlParser.parseURLParam()['id'];
-            console.log('Id Resto :',getId);
+            // RENDER DATA TO DOM
             const dataResto = await RestaurantData.getDetailResto(getId);
-            console.log(dataResto);
-            mainContainer.innerHTML = renderRestoDetail(dataResto);
+            detilContainer.innerHTML = renderRestoDetail(dataResto);
+            // CHANGE VIEW FROM SPINNER TO DETAIL INFO
+            loadingElement.style.display = 'none';
+            detilContainer.style.display = 'block';
+
+            // ADD LOGIC TO TOGGLE LIKE BUTTON
+            LikeButtonPresenter.init({
+                restoObj: dataResto, 
+                likeContainer: likeContainer,
+            });
+            
         }
         catch(err) {
             console.log('error fetch data detail resto ', err);
